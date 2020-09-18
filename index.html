@@ -221,31 +221,31 @@
 
 
   
-    <article id="post-covMat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-plot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/17/covMat/">Matlab下将多张图片转换成mat文件。</a>
+      <a class="article-title" href="/2019/09/23/plot/">Matlab坐标轴指数显</a>
     </h1>
   
 
         
         
 
-<a href="/2019/09/17/covMat/" class="archive-article-date">
-  	<time datetime="2019-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
+<a href="/2019/09/23/plot/" class="archive-article-date">
+  	<time datetime="2019-09-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用Matlab对图片进行操作时，大量的单张图片不利于操作，此时需要将图片转化为.mat格式，以便高效利用数据。文章中的代码以PIE数据集作为原始原始图片<strong>每张图片的名称是连续的数字，相同类别的图片张数相等且名称连续</strong>。代码不是很复杂，关键地方已经加上注释，就不再详细说明。以下是我的代码，也可以去我的<a href="https://github.com/nliang1995/MatlabFunction" target="_blank" rel="noopener">git</a>上下载程序和测试图片。</p>
+        <p>在搜索如何使用指数显示时，都是推荐使用<strong>semilogy</strong>、<strong>set(gca,’yscale’,’log’)</strong>，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：</p>
         
-          <a class="article-more-a" href="/2019/09/17/covMat/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/23/plot/#more">more >></a>
         
       
 
@@ -295,21 +295,21 @@
 
 
   
-    <article id="post-plot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-covMat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/17/plot/">Matlab坐标轴指数显</a>
+      <a class="article-title" href="/2019/09/17/covMat/">Matlab下将多张图片转换成mat文件。</a>
     </h1>
   
 
         
         
 
-<a href="/2019/09/17/plot/" class="archive-article-date">
+<a href="/2019/09/17/covMat/" class="archive-article-date">
   	<time datetime="2019-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
 </a>
         
@@ -317,9 +317,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在搜索如何使用指数显示时，都是推荐使用<strong>semilogy</strong>、<strong>set(gca,’yscale’,’log’)</strong>，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：</p>
+        <p>使用Matlab对图片进行操作时，大量的单张图片不利于操作，此时需要将图片转化为.mat格式，以便高效利用数据。文章中的代码以PIE数据集作为原始原始图片<strong>每张图片的名称是连续的数字，相同类别的图片张数相等且名称连续</strong>。代码不是很复杂，关键地方已经加上注释，就不再详细说明。以下是我的代码，也可以去我的<a href="https://github.com/nliang1995/MatlabFunction" target="_blank" rel="noopener">git</a>上下载程序和测试图片。</p>
         
-          <a class="article-more-a" href="/2019/09/17/plot/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/17/covMat/#more">more >></a>
         
       
 
