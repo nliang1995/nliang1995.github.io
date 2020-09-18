@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://nliang1995.github.io">
-  <title>Archives: 2019 | Hexo</title>
+  <title>Matlab坐标轴指数显 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://nliang1995.github.io/archives/2019/index.html">
+  <meta name="description" content="在搜索如何使用指数显示时，都是推荐使用semilogy、set(gca,’yscale’,’log’)，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab坐标轴指数显">
+<meta property="og:url" content="https://nliang1995.github.io/2019/09/17/plot/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在搜索如何使用指数显示时，都是推荐使用semilogy、set(gca,’yscale’,’log’)，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/09/18/6ClNfdJHiOG2yz4.png">
+<meta property="article:published_time" content="2019-09-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-18T01:54:43.890Z">
 <meta property="article:author" content="nliang">
+<meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/09/18/6ClNfdJHiOG2yz4.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,78 +147,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-plot" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2019/09/17/covMat/" class="archive-article-date">
-  	<time datetime="2019-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/covMat/">Matlab下将多张图片转换成mat文件。</a>
+    <h1 class="article-title" itemprop="name">
+      Matlab坐标轴指数显
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 
 <a href="/2019/09/17/plot/" class="archive-article-date">
   	<time datetime="2019-09-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/17/plot/">Matlab坐标轴指数显</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在搜索如何使用指数显示时，都是推荐使用<strong>semilogy</strong>、<strong>set(gca,’yscale’,’log’)</strong>，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Simple demo</span><br><span class="line">a = [10,25,54,67,86,92];</span><br><span class="line">plot(a,<span class="string">'o-b'</span>,<span class="string">'MarkerSize'</span>,6,<span class="string">'LineWidth'</span>,1.2);</span><br><span class="line">axis([1,5,0,100]);</span><br><span class="line">% <span class="built_in">set</span>(gca,<span class="string">'XTick'</span>,10.^(-4:1),<span class="string">'xscale'</span>,<span class="string">'log'</span>,<span class="string">'Fontname'</span>, <span class="string">'Times New Roman'</span>,<span class="string">'FontSize'</span>,12);</span><br><span class="line"><span class="built_in">set</span>(gca,<span class="string">'XTick'</span>,0:1:5);</span><br><span class="line"><span class="built_in">set</span>(gca,<span class="string">'XTicklabel'</span>,&#123;<span class="string">'10^-^3'</span>,<span class="string">'10^-^2'</span>,<span class="string">'10^-^1'</span>,<span class="string">'10^0'</span>,<span class="string">'10^1'</span>,<span class="string">'10^2'</span>&#125;,<span class="string">'Fontname'</span>, <span class="string">'Times New Roman'</span>,<span class="string">'FontSize'</span>,12)</span><br></pre></td></tr></table></figure>
+<div align=center><img src="https://i.loli.net/2020/09/18/6ClNfdJHiOG2yz4.png" width="600"/></div>
+
+<p><strong>如有错误，欢迎指正</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -223,19 +200,110 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://nliang1995.github.io/2019/09/17/plot/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/17/covMat/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Matlab下将多张图片转换成mat文件。
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -271,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
