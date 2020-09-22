@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://nliang1995.github.io">
-  <title>Matlab坐标轴指数显示 | Hexo</title>
+  <title>关于MBR和GPT的开机流程。 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在搜索如何使用指数显示时，都是推荐使用semilogy、set(gca,’yscale’,’log’)，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：">
+  <meta name="description" content="BISO搭配MBR&#x2F;GPT的开机流程 BIOS：开机主动执行的固件，会认识第一个可开机的设备；  MBR：第一个可开机设备的第一个扇区内的主要开机记录区块，内含开机管理程序；  开机管理程序（boot loader）：可读取核心文件来执行的软件；  核心文件：开始操作系统的功能；   注意事项：如果分区表为GPT格式，BIOS也能够从LBA0的MBR相容区块读取第一阶段的开机管理程序码，如果开机管">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Matlab坐标轴指数显示">
-<meta property="og:url" content="https://nliang1995.github.io/2019/09/23/plot/index.html">
+<meta property="og:title" content="关于MBR和GPT的开机流程。">
+<meta property="og:url" content="https://nliang1995.github.io/2020/04/07/%E5%85%B3%E4%BA%8EMBR%E5%92%8CGPT%E7%9A%84%E5%BC%80%E6%9C%BA%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在搜索如何使用指数显示时，都是推荐使用semilogy、set(gca,’yscale’,’log’)，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：">
+<meta property="og:description" content="BISO搭配MBR&#x2F;GPT的开机流程 BIOS：开机主动执行的固件，会认识第一个可开机的设备；  MBR：第一个可开机设备的第一个扇区内的主要开机记录区块，内含开机管理程序；  开机管理程序（boot loader）：可读取核心文件来执行的软件；  核心文件：开始操作系统的功能；   注意事项：如果分区表为GPT格式，BIOS也能够从LBA0的MBR相容区块读取第一阶段的开机管理程序码，如果开机管">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2020/09/18/6ClNfdJHiOG2yz4.png">
-<meta property="article:published_time" content="2019-09-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-18T02:01:28.652Z">
+<meta property="article:published_time" content="2020-04-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-21T10:28:38.000Z">
 <meta property="article:author" content="nliang">
-<meta property="article:tag" content="Matlab">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/09/18/6ClNfdJHiOG2yz4.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -147,14 +145,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-plot" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-关于MBR和GPT的开机流程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Matlab坐标轴指数显示
+      关于MBR和GPT的开机流程。
     </h1>
   
 
@@ -166,21 +164,90 @@
         </span>
 
 
-<a href="/2019/09/23/plot/" class="archive-article-date">
-  	<time datetime="2019-09-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+<a href="/2020/04/07/%E5%85%B3%E4%BA%8EMBR%E5%92%8CGPT%E7%9A%84%E5%BC%80%E6%9C%BA%E6%B5%81%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-04-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在搜索如何使用指数显示时，都是推荐使用<strong>semilogy</strong>、<strong>set(gca,’yscale’,’log’)</strong>，研究了半天，也只摸索出显示正指数，对于负指数表示无能为力。最终找到了一个个人认为是很好的解决方案，代码很简单，如下所示：</p>
+        <h2 id="BISO搭配MBR-GPT的开机流程"><a href="#BISO搭配MBR-GPT的开机流程" class="headerlink" title="BISO搭配MBR/GPT的开机流程"></a>BISO搭配MBR/GPT的开机流程</h2><ol>
+<li><p>BIOS：开机主动执行的固件，会认识第一个可开机的设备；</p>
+</li>
+<li><p>MBR：第一个可开机设备的第一个扇区内的主要开机记录区块，内含开机管理程序；</p>
+</li>
+<li><p>开机管理程序（boot loader）：可读取核心文件来执行的软件；</p>
+</li>
+<li><p>核心文件：开始操作系统的功能；</p>
+</li>
+</ol>
+<p>注意事项：如果分区表为GPT格式，BIOS也能够从LBA0的MBR相容区块读取第一阶段的开机管理程序码，如果开机管理程序能够认识GPT，那么使用BIOS同样可以读取到正确的操作系统核心。</p>
 <a id="more"></a>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Simple demo</span><br><span class="line">a = [10,25,54,67,86,92];</span><br><span class="line">plot(a,<span class="string">'o-b'</span>,<span class="string">'MarkerSize'</span>,6,<span class="string">'LineWidth'</span>,1.2);</span><br><span class="line">axis([1,5,0,100]);</span><br><span class="line">% <span class="built_in">set</span>(gca,<span class="string">'XTick'</span>,10.^(-4:1),<span class="string">'xscale'</span>,<span class="string">'log'</span>,<span class="string">'Fontname'</span>, <span class="string">'Times New Roman'</span>,<span class="string">'FontSize'</span>,12);</span><br><span class="line"><span class="built_in">set</span>(gca,<span class="string">'XTick'</span>,0:1:5);</span><br><span class="line"><span class="built_in">set</span>(gca,<span class="string">'XTicklabel'</span>,&#123;<span class="string">'10^-^3'</span>,<span class="string">'10^-^2'</span>,<span class="string">'10^-^1'</span>,<span class="string">'10^0'</span>,<span class="string">'10^1'</span>,<span class="string">'10^2'</span>&#125;,<span class="string">'Fontname'</span>, <span class="string">'Times New Roman'</span>,<span class="string">'FontSize'</span>,12)</span><br></pre></td></tr></table></figure>
-<div align=center><img src="https://i.loli.net/2020/09/18/6ClNfdJHiOG2yz4.png" width="600"/></div>
+<p>UEFI(Unified Extensible Firmware Interface): UEFI主要是想取代BIOS固件界面，其使用C语言编写，比起使用组合语言的传统BIOS要更容易开发，也因为使用C语言撰写，使小型系统的开发充满各式各样的可能性。 </p>
+<h2 id="BIOS引导开机顺序"><a href="#BIOS引导开机顺序" class="headerlink" title="BIOS引导开机顺序"></a>BIOS引导开机顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	start(开机)--&gt;BIOS初始化--&gt;BIOS自检--&gt;引导操作系统--&gt;进入操作系统</span><br></pre></td></tr></table></figure>
 
-<p><strong>如有错误，欢迎指正</strong></p>
+<h2 id="UEFI引导开机顺序"><a href="#UEFI引导开机顺序" class="headerlink" title="UEFI引导开机顺序"></a>UEFI引导开机顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">start(开机)--&gt;UEFI初始化--&gt;引导操作系统--&gt;进入操作系统</span><br></pre></td></tr></table></figure>
+
+
+
+<p>从以上两张图可以看出，和传统的BIOS引导相比，UEFI引导少了一道BIOS自检的过程。UEFI用于操作系统自动从预启动的操作环境，加载到一种操作系统上，使程序化繁为简，节约加载系统时间。</p>
+<table>
+<thead>
+<tr>
+<th>比较项目</th>
+<th>传统BIOS</th>
+<th>UEFI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用程序语言</td>
+<td>组合语言</td>
+<td>C语言</td>
+</tr>
+<tr>
+<td>硬件资源控制</td>
+<td>使用中断（RIQ）管理不可变的内存存取不可变的输入/输出存取</td>
+<td>使用驱动程序与协定</td>
+</tr>
+<tr>
+<td>处理器运行环境</td>
+<td>16位</td>
+<td>CPU保护模式</td>
+</tr>
+<tr>
+<td>扩充方式</td>
+<td>通过IRQ链接</td>
+<td>直接载入驱动程序</td>
+</tr>
+<tr>
+<td>第三方厂商支持</td>
+<td>较差</td>
+<td>较佳且支持多平台</td>
+</tr>
+<tr>
+<td>图形化能力</td>
+<td>较差</td>
+<td>较佳</td>
+</tr>
+<tr>
+<td>内置简化操作系统的环境</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
+<h2 id="基本硬盘分区模式："><a href="#基本硬盘分区模式：" class="headerlink" title="基本硬盘分区模式："></a>基本硬盘分区模式：</h2><p>最简单的分区模式：仅分区出根目录（/）与内存交换空间（swap）。</p>
+<p>容量大且（或）读写频繁的目录：/boot，/，/home，/var，swap。</p>
+<h2 id="关机注意事项"><a href="#关机注意事项" class="headerlink" title="关机注意事项"></a>关机注意事项</h2><ol>
+<li><p>观察系统使用状态：通过“who”指令查看目前谁在线上。“netstat -a”查看网络状态。”ps -aux“查看背景执行的程序。</p>
+</li>
+<li><p>正确关机指令的使用：</p>
+<p>将数据同步写入硬盘中的指令：sync；</p>
+<p>关机指令：shutdown；</p>
+<p>重新开机，关机：reboot，halt，poweroff；</p>
+</li>
+</ol>
 
       
 
@@ -194,7 +261,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -250,7 +317,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://nliang1995.github.io/2019/09/23/plot/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://nliang1995.github.io/2020/04/07/%E5%85%B3%E4%BA%8EMBR%E5%92%8CGPT%E7%9A%84%E5%BC%80%E6%9C%BA%E6%B5%81%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,18 +331,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/01/hexo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo+Github搭建个人博客。
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/17/covMat/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Matlab下将多张图片转换成mat文件。</div>
+    <a href="/2020/04/07/Linux%E6%96%87%E4%BB%B6%E5%8F%8A%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9B%B8%E5%85%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于MBR和GPT的开机流程。</div>
       <i class="icon-circle-right"></i>
     </a>
   
